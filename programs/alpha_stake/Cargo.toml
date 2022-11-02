@@ -1,0 +1,30 @@
+[package]
+name = "alpha-stake"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "alpha_stake"
+
+[features]
+no-entrypoint = []
+no-idl = []
+cpi = ["no-entrypoint"]
+default = []
+
+[profile.release]
+overflow-checks = true
+
+[dependencies]
+anchor-lang = { version="0.24.2", features = ["init-if-needed"] }
+anchor-spl = "0.24.2"
+bitflags = "1.3.2"
+bytemuck = "1.7.2"
+static_assertions = "1.1.0"
+thiserror = "1.0.30"
+metaplex-token-metadata = { version = "0.0.1", features = ["no-entrypoint"] }
+gem_common = {path='../../lib/gem_common'}
+proc_macros = {path='../../lib/proc_macros'}
+arrayref = "0.3.6"

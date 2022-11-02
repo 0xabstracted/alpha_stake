@@ -1,0 +1,4 @@
+[workspace]
+members = [
+    "programs/alpha_stake"
+]
